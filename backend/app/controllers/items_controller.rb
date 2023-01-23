@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.image.empty?
-      openAIClient = OPENAI::Client.new
+      openAIClient = OpenAI::Client.new
       response = openAIClient.images.generate(
         parameters: {
           prompt: @item.title,
